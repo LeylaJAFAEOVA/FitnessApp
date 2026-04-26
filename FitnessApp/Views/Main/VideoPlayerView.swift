@@ -26,7 +26,7 @@ struct VideoPlayerView: UIViewRepresentable {
         webView.load(URLRequest(url: embedURL))
     }
 
-    // Конвертирует любую YouTube ссылку в embed
+    
     private func youtubeEmbedURL(from url: URL) -> URL {
         let str = url.absoluteString
         var videoID = ""

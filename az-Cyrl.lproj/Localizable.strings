@@ -128,3 +128,39 @@
 "login.no_account" = "Hesabın yoxdur? ";
 "login.register" = "Qeydiyyat";
 "login.google" = "Google ilə daxil ol";
+
+// Nutrition
+"nutrition.title"             = "Qida";
+"nutrition.consumed"          = "Yeyildi";
+"nutrition.remaining"         = "Qalıb";
+"nutrition.goal"              = "Hədəf";
+"nutrition.calories_of"       = "%d kkal-dan";
+"nutrition.protein"           = "Zülal";
+"nutrition.fat"               = "Yağ";
+"nutrition.carbs"             = "Karbohidrat";
+"nutrition.macro_of"          = "%dq-dan";
+"nutrition.meals_section"     = "Yeməklər";
+"nutrition.water"             = "Su";
+"nutrition.glasses"           = "stəkan";
+"nutrition.add_food"          = "Məhsul əlavə et";
+"nutrition.search_placeholder"= "Məhsul axtar...";
+"nutrition.macro.p"           = "Z";
+"nutrition.macro.f"           = "Y";
+"nutrition.macro.c"           = "K";
+"nutrition.meal.breakfast"    = "Səhər yeməyi";
+"nutrition.meal.lunch"        = "Nahar";
+"nutrition.meal.dinner"       = "Şam yeməyi";
+
+"nutrition.gram_unit"     = "q";
+"nutrition.macro_of"      = "%d q-dan";
+"tab.friends"             = "Dostlar";
+"tab.nutrition"           = "Qida";
+
+"tab.friends"   = "Dostlar";
+"tab.nutrition" = "Qida";
+
+"nutrition.new_product"           = "Yeni məhsul";
+"nutrition.product_name"          = "Ad";
+"nutrition.product_name_placeholder" = "Məhsulun adı";
+"nutrition.calories_field"        = "Kalori";
+"nutrition.grams_field"           = "Hər (q)";

@@ -126,3 +126,39 @@
 "login.no_account" = "Нет аккаунта? ";
 "login.register" = "Зарегистрироваться";
 "login.google" = "Войти через Google";
+
+// Nutrition
+"nutrition.title"             = "Питание";
+"nutrition.consumed"          = "Съедено";
+"nutrition.remaining"         = "Осталось";
+"nutrition.goal"              = "Цель";
+"nutrition.calories_of"       = "из %d ккал";
+"nutrition.protein"           = "Белки";
+"nutrition.fat"               = "Жиры";
+"nutrition.carbs"             = "Углеводы";
+"nutrition.macro_of"          = "из %dг";
+"nutrition.meals_section"     = "Приёмы пищи";
+"nutrition.water"             = "Вода";
+"nutrition.glasses"           = "стаканов";
+"nutrition.add_food"          = "Добавить продукт";
+"nutrition.search_placeholder"= "Поиск продукта...";
+"nutrition.macro.p"           = "Б";
+"nutrition.macro.f"           = "Ж";
+"nutrition.macro.c"           = "У";
+"nutrition.meal.breakfast"    = "Завтрак";
+"nutrition.meal.lunch"        = "Обед";
+"nutrition.meal.dinner"       = "Ужин";
+
+"nutrition.gram_unit"     = "г";
+"nutrition.macro_of"      = "из %dг";
+"tab.friends"             = "Друзья";
+"tab.nutrition"           = "Питание";
+
+"tab.friends"   = "Друзья";
+"tab.nutrition" = "Питание";
+
+"nutrition.new_product"           = "Новый продукт";
+"nutrition.product_name"          = "Название";
+"nutrition.product_name_placeholder" = "Название продукта";
+"nutrition.calories_field"        = "Калории";
+"nutrition.grams_field"           = "На (г)";

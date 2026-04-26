@@ -19,14 +19,14 @@ struct Workout: Identifiable, Codable {
     var exercises: [Exercise] = []
 
     enum WorkoutType: String, Codable, CaseIterable {
-        // rawValue сохраняется в Firebase — НЕ меняем
+       
         case cardio   = "Кардио"
         case strength = "Силовая"
         case yoga     = "Йога"
         case hiit     = "HIIT"
         case running  = "Бег"
 
-        // Локализованное название для UI
+       
         var localizedName: String {
             switch self {
             case .cardio:   return NSLocalizedString("workout.type.cardio",   comment: "")
@@ -67,24 +67,24 @@ struct Exercise: Identifiable, Codable {
     var weight: Double?
 }
 
-// MARK: — Exercise Templates (локализованные имена)
+
 
 struct ExerciseTemplate: Identifiable {
     let id = UUID()
-    let nameKey: String          // ключ локализации
+    let nameKey: String
     let type: Workout.WorkoutType
     let defaultSets: Int
     let defaultReps: Int
     let videoURL: String?
 
-    // Локализованное имя для отображения
+
     var name: String {
         NSLocalizedString(nameKey, comment: "")
     }
 
     static let all: [ExerciseTemplate] = [
 
-        // MARK: Силовые / Strength / Güc
+       
         ExerciseTemplate(nameKey: "exercise.bench_press",      type: .strength, defaultSets: 4, defaultReps: 10, videoURL: "https://www.youtube.com/watch?v=rT7DgCr-3pg"),
         ExerciseTemplate(nameKey: "exercise.squats",           type: .strength, defaultSets: 4, defaultReps: 12, videoURL: "https://www.youtube.com/watch?v=aclHkVaku9U"),
         ExerciseTemplate(nameKey: "exercise.deadlift",         type: .strength, defaultSets: 3, defaultReps: 8,  videoURL: "https://www.youtube.com/watch?v=op9kVnSso6Q"),
@@ -94,23 +94,23 @@ struct ExerciseTemplate: Identifiable {
         ExerciseTemplate(nameKey: "exercise.dumbbell_press",   type: .strength, defaultSets: 3, defaultReps: 12, videoURL: nil),
         ExerciseTemplate(nameKey: "exercise.row",              type: .strength, defaultSets: 3, defaultReps: 10, videoURL: nil),
 
-        // MARK: Кардио / Cardio / Kardio
+        
         ExerciseTemplate(nameKey: "exercise.jump_rope",        type: .cardio,   defaultSets: 3, defaultReps: 100, videoURL: nil),
         ExerciseTemplate(nameKey: "exercise.burpees",          type: .cardio,   defaultSets: 3, defaultReps: 10,  videoURL: "https://www.youtube.com/watch?v=dZgVxmf6jkA"),
         ExerciseTemplate(nameKey: "exercise.running_in_place", type: .cardio,   defaultSets: 3, defaultReps: 60,  videoURL: nil),
         ExerciseTemplate(nameKey: "exercise.jumping_jacks",    type: .cardio,   defaultSets: 3, defaultReps: 20,  videoURL: nil),
 
-        // MARK: HIIT
+        
         ExerciseTemplate(nameKey: "exercise.mountain_climber", type: .hiit,     defaultSets: 4, defaultReps: 30, videoURL: nil),
         ExerciseTemplate(nameKey: "exercise.box_jumps",        type: .hiit,     defaultSets: 3, defaultReps: 10, videoURL: nil),
         ExerciseTemplate(nameKey: "exercise.jump_lunges",      type: .hiit,     defaultSets: 3, defaultReps: 12, videoURL: nil),
 
-        // MARK: Йога / Yoga
+        
         ExerciseTemplate(nameKey: "exercise.downward_dog",     type: .yoga,     defaultSets: 1, defaultReps: 60, videoURL: nil),
         ExerciseTemplate(nameKey: "exercise.warrior_pose",     type: .yoga,     defaultSets: 2, defaultReps: 30, videoURL: nil),
         ExerciseTemplate(nameKey: "exercise.child_pose",       type: .yoga,     defaultSets: 1, defaultReps: 60, videoURL: nil),
 
-        // MARK: Бег / Running
+       
         ExerciseTemplate(nameKey: "exercise.easy_run",         type: .running,  defaultSets: 1, defaultReps: 1, videoURL: nil),
         ExerciseTemplate(nameKey: "exercise.interval_run",     type: .running,  defaultSets: 6, defaultReps: 1, videoURL: nil),
     ]

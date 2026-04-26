@@ -98,7 +98,7 @@ struct WorkoutDetailView: View {
                 Spacer()
             }.padding(16)
 
-            // Play / Pause button
+            
             if !workout.videoURLs.isEmpty {
                 Button { withAnimation(.easeInOut) { videoExpanded.toggle() } } label: {
                     ZStack {

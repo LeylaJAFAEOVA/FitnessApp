@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C400A5CC2F84E38A004ED331 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = C400A5CB2F84E38A004ED331 /* FacebookLogin */; };
+		C45A95192F9CA0D000CD68C1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4E874C32F7E94180085A93A /* Localizable.strings */; };
 		C45DCEDE2F84DB67000CA318 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C45DCEDD2F84DB67000CA318 /* FirebaseAuth */; };
 		C45DCEE02F84DB73000CA318 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C45DCEDF2F84DB73000CA318 /* FirebaseFirestore */; };
 		C45DCEE22F84DB7D000CA318 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = C45DCEE12F84DB7D000CA318 /* FirebaseCore */; };
@@ -46,11 +47,13 @@
 				Views/Auth/LoginView.swift,
 				Views/Auth/RegisterView.swift,
 				Views/Main/AddWorkoutView.swift,
-				Views/Main/ExploreView.swift,
+				Views/Main/FriendsView.swift,
 				Views/Main/HomeView.swift,
 				Views/Main/MainTabView.swift,
+				Views/Main/NutritionView.swift,
 				Views/Main/OnboardingView.swift,
 				Views/Main/ProfileView.swift,
+				Views/Main/SplashView.swift,
 				Views/Main/StatsView.swift,
 				Views/Main/VideoPlayerView.swift,
 				Views/Main/WorkoutDetailView.swift,
@@ -203,6 +206,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C45A95192F9CA0D000CD68C1 /* Localizable.strings in Resources */,
 				C4FB1BA92F961E7400649AA6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

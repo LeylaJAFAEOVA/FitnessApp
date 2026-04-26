@@ -5,10 +5,7 @@
 //  Created by Leyla Jafarova on 05/04/2026.
 //
 
-
 import SwiftUI
-
-// MARK: — Design tokens
 
 enum AppTheme {
     static let lime   = Color(hex: "#C8FF00")
@@ -36,7 +33,6 @@ enum AppTheme {
     }
 }
 
-// MARK: — Color(hex:) initialiser
 
 extension Color {
     init(hex: String) {
@@ -58,7 +54,6 @@ extension Color {
     }
 }
 
-// MARK: — YouTube thumbnail URL helper
 
 func youtubeThumbnailURL(from urlString: String) -> URL? {
     let patterns = [
@@ -76,8 +71,6 @@ func youtubeThumbnailURL(from urlString: String) -> URL? {
     }
     return nil
 }
-
-// MARK: — Placeholder helper for TextField
 
 extension View {
     func placeholder<C: View>(when show: Bool, @ViewBuilder _ p: () -> C) -> some View {

@@ -22,7 +22,7 @@ struct LoginView: View {
                 ScrollView(showsIndicators: false) {
                     VStack(spacing: 32) {
 
-                        // Logo
+                        
                         VStack(spacing: 12) {
                             ZStack {
                                 Circle().fill(AppTheme.lime.opacity(0.15)).frame(width: 90, height: 90)
@@ -39,7 +39,7 @@ struct LoginView: View {
                         }
                         .padding(.top, 60)
 
-                        // Fields
+                        
                         VStack(spacing: 14) {
                             DarkTextField(
                                 icon: "envelope",
@@ -56,18 +56,33 @@ struct LoginView: View {
                                 isSecure: true
                             )
 
+                            
+                            HStack {
+                                Spacer()
+                                Button {
+                                    Task { await authVM.resetPassword(email: email) }
+                                } label: {
+                                    Text("Forgot password?")
+                                        .font(.system(size: 13))
+                                        .foregroundColor(AppTheme.lime)
+                                }
+                                .disabled(email.isEmpty)
+                            }
+
                             if !authVM.errorMessage.isEmpty {
                                 Text(authVM.errorMessage)
                                     .font(.caption)
-                                    .foregroundColor(.red)
+                                    .foregroundColor(
+                                        authVM.errorMessage.contains("✅") ? .green : .red
+                                    )
                                     .multilineTextAlignment(.center)
                             }
                         }
 
-                        // Buttons
+                        
                         VStack(spacing: 12) {
 
-                            // Email login
+                          
                             Button {
                                 Task { await authVM.login(email: email, password: password) }
                             } label: {
@@ -86,32 +101,49 @@ struct LoginView: View {
                             }
                             .disabled(authVM.isLoading || email.isEmpty || password.isEmpty)
 
-                            // Divider
+                            
                             HStack {
                                 Rectangle().fill(AppTheme.border).frame(height: 1)
                                 Text("or").font(.system(size: 12)).foregroundColor(AppTheme.muted)
                                 Rectangle().fill(AppTheme.border).frame(height: 1)
                             }
 
-                            // Google login
-                            Button {
-                                Task { await authVM.signInWithGoogle() }
-                            } label: {
-                                HStack(spacing: 10) {
-                                    Image(systemName: "g.circle.fill")
-                                        .font(.system(size: 20))
-                                        .foregroundColor(.white)
-                                    Text(NSLocalizedString("login.google", comment: ""))
-                                        .font(.system(size: 16, weight: .semibold))
-                                        .foregroundColor(.white)
+                            
+                            HStack(spacing: 20) {
+                    
+                                Button {
+                                    Task { await authVM.signInWithGoogle() }
+                                } label: {
+                                    ZStack {
+                                        Circle()
+                                            .fill(AppTheme.card)
+                                            .frame(width: 54, height: 54)
+                                            .overlay(Circle().stroke(AppTheme.border, lineWidth: 1))
+                                        Image("google")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 26, height: 26)
+                                    }
                                 }
-                                .frame(maxWidth: .infinity)
-                                .padding(.vertical, 16)
-                                .background(Color(hex: "#4285F4"))
-                                .cornerRadius(100)
+
+                                
+                                Button {
+                                    // TODO: Facebook auth
+                                } label: {
+                                    ZStack {
+                                        Circle()
+                                            .fill(AppTheme.card)
+                                            .frame(width: 54, height: 54)
+                                            .overlay(Circle().stroke(AppTheme.border, lineWidth: 1))
+                                        Image("facebook")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 26, height: 26)
+                                    }
+                                }
                             }
 
-                            // Register
+                           
                             Button { showRegister = true } label: {
                                 Text(NSLocalizedString("login.no_account", comment: ""))
                                     .foregroundColor(AppTheme.muted) +
@@ -138,7 +170,7 @@ struct DarkTextField: View {
     let placeholder: String
     @Binding var text: String
     var isSecure: Bool = false
-
+    
     var body: some View {
         HStack(spacing: 12) {
             Image(systemName: icon)
@@ -158,10 +190,5 @@ struct DarkTextField: View {
                     .foregroundColor(.white)
             }
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 16)
-        .background(AppTheme.card)
-        .cornerRadius(14)
-        .overlay(RoundedRectangle(cornerRadius: 14).stroke(AppTheme.border, lineWidth: 1))
     }
 }

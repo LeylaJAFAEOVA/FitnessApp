@@ -42,7 +42,7 @@ struct AddWorkoutView: View {
                             typePicker
                         }
 
-                        // Parameters
+                        
                         formSection(NSLocalizedString("add.section.params", comment: "")) {
                             customStepper(
                                 label: NSLocalizedString("add.duration", comment: ""),
@@ -59,7 +59,7 @@ struct AddWorkoutView: View {
                             )
                         }
 
-                        // Video
+                        
                         formSection(NSLocalizedString("add.section.video", comment: "")) {
                             ForEach(Array(videoURLs.enumerated()), id: \.offset) { idx, _ in
                                 if idx > 0 { Divider().background(AppTheme.border) }
@@ -93,7 +93,7 @@ struct AddWorkoutView: View {
                             }
                         }
 
-                        // Exercises
+                
                         formSection(
                             "\(NSLocalizedString("add.section.exercises", comment: "")) (\(selected.count))"
                         ) {
@@ -113,7 +113,7 @@ struct AddWorkoutView: View {
                     .padding(.horizontal, 20).padding(.top, 10).padding(.bottom, 40)
                 }
 
-                // Saving overlay
+    
                 if isSaving {
                     Color.black.opacity(0.55).ignoresSafeArea()
                     VStack(spacing: 12) {
@@ -146,7 +146,6 @@ struct AddWorkoutView: View {
         }
     }
 
-    // MARK: — Type picker
 
     private var typePicker: some View {
         HStack {
@@ -171,7 +170,6 @@ struct AddWorkoutView: View {
         .padding(.horizontal, 16).padding(.vertical, 14)
     }
 
-    // MARK: — Exercise toggle row
 
     private func exerciseRow(_ tmpl: ExerciseTemplate) -> some View {
         let on = selected.contains(where: { $0.id == tmpl.id })
@@ -218,8 +216,6 @@ struct AddWorkoutView: View {
             await MainActor.run { isSaving = false; dismiss() }
         }
     }
-
-    // MARK: — Builders
 
     @ViewBuilder
     private func formSection<Content: View>(_ title: String, @ViewBuilder content: () -> Content) -> some View {

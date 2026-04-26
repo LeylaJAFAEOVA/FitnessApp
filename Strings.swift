@@ -8,7 +8,7 @@
 import Foundation
 
 struct Strings {
-    // MARK: — Auth
+   
     struct Auth {
         static let appTagline      = "Your personal trainer"
         static let email           = "Email"
@@ -23,14 +23,14 @@ struct Strings {
         static let close           = "Close"
     }
 
-    // MARK: — Tabs
+    
     struct Tabs {
         static let workouts = "Workouts"
         static let progress = "Progress"
         static let profile  = "Profile"
     }
 
-    // MARK: — Workouts
+   
     struct Workouts {
         static let title        = "Workouts"
         static let loading      = "Loading..."
@@ -41,7 +41,7 @@ struct Strings {
         static let kcal         = "kcal"
     }
 
-    // MARK: — Add Workout
+
     struct AddWorkout {
         static let title        = "New Workout"
         static let general      = "General"
@@ -61,7 +61,6 @@ struct Strings {
         static let saving       = "Saving..."
     }
 
-    // MARK: — Stats
     struct Stats {
         static let title          = "Progress"
         static let totalWorkouts  = "Workouts"
@@ -75,7 +74,7 @@ struct Strings {
         static let kcal           = "kcal"
     }
 
-    // MARK: — Profile
+    
     struct Profile {
         static let title          = "Profile"
         static let bodyStats      = "Body Stats"
@@ -96,7 +95,7 @@ struct Strings {
         static let kcal           = "kcal"
     }
 
-    // MARK: — Workout Types (English)
+
     struct WorkoutType {
         static let cardio   = "Cardio"
         static let strength = "Strength"

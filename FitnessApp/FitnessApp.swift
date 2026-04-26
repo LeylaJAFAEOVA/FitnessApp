@@ -15,16 +15,13 @@ struct FitnessApp: App {
     @AppStorage("app_language") private var language = "en"
 
     init() {
-        FirebaseApp.configure()
         let savedLang = UserDefaults.standard.string(forKey: "app_language") ?? "en"
         Bundle.setLanguage(savedLang)
     
+        FirebaseApp.configure()
         UserDefaults.standard.set(false, forKey: "WebKitDeveloperExtras")
-    
         URLSession.shared.configuration.waitsForConnectivity = true
-        
     }
-
     var body: some Scene {
         WindowGroup {
             ContentView()

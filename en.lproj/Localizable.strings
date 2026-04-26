@@ -137,3 +137,40 @@
 "login.no_account" = "Don't have an account? ";
 "login.register" = "Sign Up";
 "login.google" = "Sign in with Google";
+
+// Nutrition
+"nutrition.title"             = "Nutrition";
+"nutrition.consumed"          = "Consumed";
+"nutrition.remaining"         = "Remaining";
+"nutrition.goal"              = "Goal";
+"nutrition.calories_of"       = "of %d kcal";
+"nutrition.protein"           = "Protein";
+"nutrition.fat"               = "Fat";
+"nutrition.carbs"             = "Carbs";
+"nutrition.macro_of"          = "of %dg";
+"nutrition.meals_section"     = "Meals";
+"nutrition.water"             = "Water";
+"nutrition.glasses"           = "glasses";
+"nutrition.add_food"          = "Add food";
+"nutrition.search_placeholder"= "Search food...";
+"nutrition.macro.p"           = "P";
+"nutrition.macro.f"           = "F";
+"nutrition.macro.c"           = "C";
+"nutrition.meal.breakfast"    = "Breakfast";
+"nutrition.meal.lunch"        = "Lunch";
+"nutrition.meal.dinner"       = "Dinner";
+
+"nutrition.gram_unit"     = "g";
+"nutrition.macro_of"      = "of %dg";
+"tab.friends"             = "Friends";
+"tab.nutrition"           = "Nutrition";
+
+"tab.friends"   = "Friends";
+"tab.nutrition" = "Nutrition";
+
+"nutrition.new_product"           = "New Product";
+"nutrition.product_name"          = "Name";
+"nutrition.product_name_placeholder" = "Product name";
+"nutrition.calories_field"        = "Calories";
+"nutrition.grams_field"           = "Per (g)";
+
