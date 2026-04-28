@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C400A5CC2F84E38A004ED331 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = C400A5CB2F84E38A004ED331 /* FacebookLogin */; };
-		C45A95192F9CA0D000CD68C1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4E874C32F7E94180085A93A /* Localizable.strings */; };
 		C45DCEDE2F84DB67000CA318 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C45DCEDD2F84DB67000CA318 /* FirebaseAuth */; };
 		C45DCEE02F84DB73000CA318 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C45DCEDF2F84DB73000CA318 /* FirebaseFirestore */; };
 		C45DCEE22F84DB7D000CA318 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = C45DCEE12F84DB7D000CA318 /* FirebaseCore */; };
@@ -22,9 +21,6 @@
 /* Begin PBXFileReference section */
 		C45DCEA62F84D60F000CA318 /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4E874BF2F7E92D90085A93A /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
-		C4E874C42F7E94180085A93A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		C4E874C62F7EF7200085A93A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		C4E874C72F7EF7530085A93A /* az-Cyrl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "az-Cyrl"; path = "az-Cyrl.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C4E874CB2F824EDC0085A93A /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		C4FB1BA82F961E7400649AA6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -33,28 +29,29 @@
 		C48405192FA14D7600B55EB9 /* Exceptions for "FitnessApp" folder in "FitnessApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Assets.xcassets,
+				"/Localized: Resorces/Localizable.strings",
 				ContentView.swift,
 				FitnessApp.swift,
 				Models/User.swift,
 				Models/Workout.swift,
+				Resorces/Assets.xcassets,
 				"ViewModels/ WorkoutViewModel.swift",
 				ViewModels/AuthViewModel.swift,
 				Views/Auth/LoginView.swift,
+				Views/Auth/OnboardingView.swift,
 				Views/Auth/RegisterView.swift,
-				Views/Main/ActiveWorkoutView.swift,
-				Views/Main/AddWorkoutView.swift,
-				Views/Main/FriendsView.swift,
+				Views/Components/VideoPlayerView.swift,
+				Views/Features/FriendsView.swift,
+				Views/Features/NutritionView.swift,
 				Views/Main/HomeView.swift,
 				Views/Main/MainTabView.swift,
-				Views/Main/NutritionView.swift,
-				Views/Main/OnboardingView.swift,
-				Views/Main/ProfileView.swift,
 				Views/Main/SplashView.swift,
-				Views/Main/StatsView.swift,
-				Views/Main/VideoPlayerView.swift,
-				Views/Main/WorkoutDetailView.swift,
-				Views/Main/WorkoutsView.swift,
+				Views/ProfileandStats/ProfileView.swift,
+				Views/ProfileandStats/StatsView.swift,
+				Views/Workouts/ActiveWorkoutView.swift,
+				Views/Workouts/AddWorkoutView.swift,
+				Views/Workouts/WorkoutDetailView.swift,
+				Views/Workouts/WorkoutsView.swift,
 			);
 			target = C45DCEA52F84D60F000CA318 /* FitnessApp */;
 		};
@@ -101,7 +98,6 @@
 				C4FB1BA82F961E7400649AA6 /* GoogleService-Info.plist */,
 				C4E874CB2F824EDC0085A93A /* AppTheme.swift */,
 				C4E874BF2F7E92D90085A93A /* Strings.swift */,
-				C4E874C32F7E94180085A93A /* Localizable.strings */,
 				C4E874582F7D2EF10085A93A /* FitnessApp */,
 				C4E874572F7D2EF10085A93A /* Products */,
 				C45DCEDC2F84DB67000CA318 /* Frameworks */,
@@ -191,7 +187,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C45A95192F9CA0D000CD68C1 /* Localizable.strings in Resources */,
 				C4FB1BA92F961E7400649AA6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,19 +204,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		C4E874C32F7E94180085A93A /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C4E874C42F7E94180085A93A /* en */,
-				C4E874C62F7EF7200085A93A /* ru */,
-				C4E874C72F7EF7530085A93A /* az-Cyrl */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C45DCEAE2F84D611000CA318 /* Debug */ = {
