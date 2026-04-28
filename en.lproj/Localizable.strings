@@ -174,3 +174,236 @@
 "nutrition.calories_field"        = "Calories";
 "nutrition.grams_field"           = "Per (g)";
 
+"friends.filter.all" = "All";
+"friends.filter.online" = "Online";
+"friends.filter.nearby" = "Nearby";
+
+"friends.title"              = "Friends";
+"friends.map"                = "Map";
+"friends.all_friends"        = "All Friends";
+"friends.location_denied"    = "Allow location access in Settings";
+"friends.empty_category"     = "No friends in this category";
+"friends.invite_title"       = "Invite a Friend";
+"friends.invite_subtitle"    = "Share your code and train together";
+"friends.invite_code_label"  = "Your invite code";
+"friends.share"              = "Share";
+"friends.share_text"         = "Train with me in FitnessApp! Code: %@";
+"friends.workouts_week"      = "%d w/week";
+"friend.online"              = "Online";
+"friend.offline"             = "Offline";
+"friend.stat_workouts"       = "Workouts";
+"friend.stat_distance"       = "Distance";
+"friend.last_workout"        = "Last Workout";
+"friend.today"               = "Today";
+"friend.challenge"           = "Challenge to compete";
+
+/* Nutrition screen */
+"nutrition.title"                    = "Nutrition";
+"nutrition.calories_of"             = "of %d kcal";
+"nutrition.consumed"                = "Consumed";
+"nutrition.remaining"               = "Remaining";
+"nutrition.goal"                    = "Goal";
+"nutrition.protein"                 = "Protein";
+"nutrition.fat"                     = "Fat";
+"nutrition.carbs"                   = "Carbs";
+"nutrition.gram_unit"               = "g";
+"nutrition.macro_of"                = "of %d g";
+"nutrition.macro.p"                 = "P";
+"nutrition.macro.f"                 = "F";
+"nutrition.macro.c"                 = "C";
+"nutrition.meals_section"           = "Meals";
+"nutrition.add_food"                = "Add Food";
+"nutrition.search_placeholder"      = "Search foods...";
+"nutrition.new_product"             = "New Product";
+"nutrition.product_name"            = "Name";
+"nutrition.product_name_placeholder"= "Enter name";
+"nutrition.calories_field"          = "Calories";
+"nutrition.grams_field"             = "Grams";
+"nutrition.water"                   = "Water";
+"nutrition.glasses"                 = "glasses";
+
+/* Meal names */
+"nutrition.meal.breakfast"          = "Breakfast";
+"nutrition.meal.lunch"              = "Lunch";
+"nutrition.meal.dinner"             = "Dinner";
+
+/* Food database */
+"food.oatmeal"                      = "Oatmeal";
+"food.banana"                       = "Banana";
+"food.chicken_breast"               = "Chicken Breast";
+"food.brown_rice"                   = "Brown Rice";
+"food.cucumber"                     = "Cucumber";
+"food.salmon"                       = "Salmon";
+"food.broccoli"                     = "Broccoli";
+"food.egg"                          = "Egg";
+"food.cottage_cheese"               = "Cottage Cheese 5%";
+"food.greek_yogurt"                 = "Greek Yogurt";
+"food.buckwheat"                    = "Buckwheat";
+"food.beef"                         = "Beef";
+"food.apple"                        = "Apple";
+"food.almonds"                      = "Almonds";
+"food.avocado"                      = "Avocado";
+
+/* Shared */
+"add.cancel"                        = "Cancel";
+"add.save"                          = "Save";
+"workouts.kcal"                     = "kcal";
+
+/* Friends screen */
+"friends.title"                = "Friends";
+"friends.filter.all"           = "All";
+"friends.filter.online"        = "Online";
+"friends.filter.nearby"        = "Nearby";
+"friends.map"                  = "Map";
+"friends.all_friends"          = "All Friends";
+"friends.empty_category"       = "Nobody here yet";
+"friends.location_denied"      = "Location access denied. Enable it in Settings.";
+"friends.workouts_week"        = "%d wk/wk";
+"friends.invite_title"         = "Invite a Friend";
+"friends.invite_subtitle"      = "Work out together and motivate each other";
+"friends.invite_code_label"    = "Your invite code";
+"friends.share_text"           = "Join me on FitnessApp! My code: %@";
+"friends.share"                = "Share";
+
+/* Distance formatting */
+"friends.distance_m"           = "%d m";
+"friends.distance_km"          = "%.1f km";
+
+/* Friend detail sheet */
+"friend.online"                = "Online";
+"friend.offline"               = "Offline";
+"friend.stat_workouts"         = "Workouts";
+"friend.stat_distance"         = "Distance";
+"friend.last_workout"          = "Last Workout";
+"friend.today"                 = "Today";
+"friend.challenge"             = "Send Challenge";
+
+/* Workout types */
+"workout.type.hiit"            = "HIIT";
+"workout.type.strength"        = "Strength";
+"workout.type.yoga"            = "Yoga";
+
+/* Nutrition screen */
+"nutrition.title"                    = "Nutrition";
+"nutrition.calories_of"             = "of %d kcal";
+"nutrition.consumed"                = "Consumed";
+"nutrition.remaining"               = "Remaining";
+"nutrition.goal"                    = "Goal";
+"nutrition.protein"                 = "Protein";
+"nutrition.fat"                     = "Fat";
+"nutrition.carbs"                   = "Carbs";
+"nutrition.gram_unit"               = "g";
+"nutrition.macro_of"                = "of %d g";
+"nutrition.macro.p"                 = "P";
+"nutrition.macro.f"                 = "F";
+"nutrition.macro.c"                 = "C";
+"nutrition.meals_section"           = "Meals";
+"nutrition.add_food"                = "Add Food";
+"nutrition.search_placeholder"      = "Search foods...";
+"nutrition.new_product"             = "New Product";
+"nutrition.product_name"            = "Name";
+"nutrition.product_name_placeholder"= "Enter name";
+"nutrition.calories_field"          = "Calories";
+"nutrition.grams_field"             = "Grams";
+"nutrition.water"                   = "Water";
+"nutrition.glasses"                 = "glasses";
+
+/* Meal names */
+"nutrition.meal.breakfast"          = "Breakfast";
+"nutrition.meal.lunch"              = "Lunch";
+"nutrition.meal.dinner"             = "Dinner";
+
+/* Food database */
+"food.oatmeal"                      = "Oatmeal";
+"food.banana"                       = "Banana";
+"food.chicken_breast"               = "Chicken Breast";
+"food.brown_rice"                   = "Brown Rice";
+"food.cucumber"                     = "Cucumber";
+"food.salmon"                       = "Salmon";
+"food.broccoli"                     = "Broccoli";
+"food.egg"                          = "Egg";
+"food.cottage_cheese"               = "Cottage Cheese 5%";
+"food.greek_yogurt"                 = "Greek Yogurt";
+"food.buckwheat"                    = "Buckwheat";
+"food.beef"                         = "Beef";
+"food.apple"                        = "Apple";
+"food.almonds"                      = "Almonds";
+"food.avocado"                      = "Avocado";
+
+/* Shared */
+"add.cancel"                        = "Cancel";
+"add.save"                          = "Save";
+"workouts.kcal"                     = "kcal";
+
+/* Friends screen */
+"friends.title"                = "Friends";
+"friends.filter.all"           = "All";
+"friends.filter.online"        = "Online";
+"friends.filter.nearby"        = "Nearby";
+"friends.map"                  = "Map";
+"friends.all_friends"          = "All Friends";
+"friends.empty_category"       = "Nobody here yet";
+"friends.location_denied"      = "Location access denied. Enable it in Settings.";
+"friends.workouts_week"        = "%d wk/wk";
+"friends.invite_title"         = "Invite a Friend";
+"friends.invite_subtitle"      = "Work out together and motivate each other";
+"friends.invite_code_label"    = "Your invite code";
+"friends.share_text"           = "Join me on FitnessApp! My code: %@";
+"friends.share"                = "Share";
+
+/* Distance formatting */
+"friends.distance_m"           = "%d m";
+"friends.distance_km"          = "%.1f km";
+
+/* Friend detail sheet */
+"friend.online"                = "Online";
+"friend.offline"               = "Offline";
+"friend.stat_workouts"         = "Workouts";
+"friend.stat_distance"         = "Distance";
+"friend.last_workout"          = "Last Workout";
+"friend.today"                 = "Today";
+"friend.challenge"             = "Send Challenge";
+
+/* Workout types */
+"workout.type.hiit"            = "HIIT";
+"workout.type.strength"        = "Strength";
+"workout.type.yoga"            = "Yoga";
+
+/* WorkoutDetailView */
+"detail.title"           = "Details";
+"detail.min"             = "min";
+"detail.kcal"            = "kcal";
+"detail.video"           = "Video";
+"detail.exercises"       = "Exercises";
+"detail.sets"            = "sets";
+"detail.reps"            = "reps";
+"detail.lets_workout"    = "Let's Workout";
+"detail.watch_video"     = "Watch video";
+
+/* ActiveWorkoutView */
+"active.elapsed"             = "Time";
+"active.sets_done"           = "Sets Done";
+"active.sets_left"           = "Remaining";
+"active.current_exercise"    = "Current Exercise";
+"active.up_next"             = "Up Next";
+"active.complete_set"        = "Complete Set";
+"active.complete_last_set"   = "Last Set!";
+"active.skip"                = "Skip";
+"active.finish"              = "Finish";
+"active.exercise_of"         = "%d of %d";
+"active.rest"                = "Rest";
+"active.rest_subtitle"       = "Recover before the next set";
+"active.skip_rest"           = "Skip Rest";
+"active.finish_alert_title"   = "Finish Workout?";
+"active.finish_alert_message" = "Your progress will be saved";
+"active.finish_confirm"       = "Finish";
+"active.finish_cancel"        = "Continue";
+"active.completed_title"      = "Great Work!";
+"active.done"                 = "Done";
+
+/* Workout types */
+"workout.type.cardio"    = "Cardio";
+"workout.type.strength"  = "Strength";
+"workout.type.yoga"      = "Yoga";
+"workout.type.hiit"      = "HIIT";
+"workout.type.running"   = "Running";

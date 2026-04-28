@@ -36,20 +36,23 @@ class FriendsViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
 
     private let locationManager = CLLocationManager()
 
-    // Mock друзья — замени на Firebase данные
     @Published var friends: [Friend] = [
-        Friend(id: "1", name: "Amir",    initials: "AM", color: Color(hex: "#5DCAA5"),
+        Friend(id: "1", name: "Amir",   initials: "AM", color: Color(hex: "#5DCAA5"),
                coordinate: CLLocationCoordinate2D(latitude: 40.4120, longitude: 49.8700),
-               lastWorkout: "Morning ex", workoutsThisWeek: 4, isOnline: true,  distanceMeters: 340),
-        Friend(id: "2", name: "Sara",    initials: "SA", color: Color(hex: "#FF6B6B"),
+               lastWorkout: NSLocalizedString("workout.morning_ex", comment: ""),
+               workoutsThisWeek: 4, isOnline: true,  distanceMeters: 340),
+        Friend(id: "2", name: "Sara",   initials: "SA", color: Color(hex: "#FF6B6B"),
                coordinate: CLLocationCoordinate2D(latitude: 40.4070, longitude: 49.8640),
-               lastWorkout: "ВИИТ",       workoutsThisWeek: 2, isOnline: true,  distanceMeters: 820),
-        Friend(id: "3", name: "Kamran",  initials: "KA", color: Color(hex: "#A855F7"),
+               lastWorkout: NSLocalizedString("workout.type.hiit", comment: ""),
+               workoutsThisWeek: 2, isOnline: true,  distanceMeters: 820),
+        Friend(id: "3", name: "Kamran", initials: "KA", color: Color(hex: "#A855F7"),
                coordinate: CLLocationCoordinate2D(latitude: 40.4050, longitude: 49.8720),
-               lastWorkout: "Силовая",    workoutsThisWeek: 5, isOnline: false, distanceMeters: 1200),
-        Friend(id: "4", name: "Nigar",   initials: "NI", color: Color(hex: "#4D9FFF"),
+               lastWorkout: NSLocalizedString("workout.type.strength", comment: ""),
+               workoutsThisWeek: 5, isOnline: false, distanceMeters: 1200),
+        Friend(id: "4", name: "Nigar",  initials: "NI", color: Color(hex: "#4D9FFF"),
                coordinate: CLLocationCoordinate2D(latitude: 40.4140, longitude: 49.8660),
-               lastWorkout: "Йога",       workoutsThisWeek: 3, isOnline: false, distanceMeters: 2100),
+               lastWorkout: NSLocalizedString("workout.type.yoga", comment: ""),
+               workoutsThisWeek: 3, isOnline: false, distanceMeters: 2100),
     ]
 
     override init() {
@@ -79,8 +82,8 @@ class FriendsViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
 
     func formattedDistance(_ meters: Double) -> String {
         meters < 1000
-            ? "\(Int(meters)) м"
-            : String(format: "%.1f км", meters / 1000)
+            ? String(format: NSLocalizedString("friends.distance_m", comment: ""), Int(meters))
+            : String(format: NSLocalizedString("friends.distance_km", comment: ""), meters / 1000)
     }
 }
 
@@ -118,7 +121,7 @@ struct FriendsView: View {
                     .padding(.bottom, 30)
                 }
             }
-            .navigationTitle(NSLocalizedString("friends.title", comment: "Друзья"))
+            .navigationTitle(NSLocalizedString("friends.title", comment: ""))
             .navigationBarTitleDisplayMode(.large)
             .toolbarColorScheme(.dark, for: .navigationBar)
             .toolbarBackground(AppTheme.dark, for: .navigationBar)
@@ -140,9 +143,9 @@ struct FriendsView: View {
 
     private var filterChips: some View {
         HStack(spacing: 8) {
-            filterChip("Все",    .all)
-            filterChip("Онлайн", .online)
-            filterChip("Рядом",  .nearby)
+            filterChip(NSLocalizedString("friends.filter.all",    comment: ""), .all)
+            filterChip(NSLocalizedString("friends.filter.online", comment: ""), .online)
+            filterChip(NSLocalizedString("friends.filter.nearby", comment: ""), .nearby)
         }
         .padding(.horizontal, 20)
         .padding(.top, 4)
@@ -171,7 +174,7 @@ struct FriendsView: View {
             HStack(spacing: 8) {
                 Image(systemName: "map.fill")
                     .foregroundColor(AppTheme.lime).font(.system(size: 14))
-                Text("Карта")
+                Text(NSLocalizedString("friends.map", comment: ""))
                     .font(.system(size: 16, weight: .semibold)).foregroundColor(.white)
             }
             .padding(.horizontal, 20)
@@ -189,7 +192,6 @@ struct FriendsView: View {
                 .cornerRadius(20)
                 .overlay(RoundedRectangle(cornerRadius: 20).stroke(AppTheme.border, lineWidth: 1))
 
-                // Locate me button
                 Button {
                     withAnimation {
                         if let loc = vm.userLocation {
@@ -211,12 +213,11 @@ struct FriendsView: View {
             }
             .padding(.horizontal, 20)
 
-            // Permission banner
             if vm.authStatus == .denied {
                 HStack(spacing: 8) {
                     Image(systemName: "location.slash.fill")
                         .foregroundColor(.orange).font(.system(size: 13))
-                    Text("Разреши доступ к геолокации в Настройках")
+                    Text(NSLocalizedString("friends.location_denied", comment: ""))
                         .font(.system(size: 12)).foregroundColor(AppTheme.muted)
                 }
                 .padding(.horizontal, 20)
@@ -229,7 +230,7 @@ struct FriendsView: View {
     private var friendsList: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
-                Text(filter == .all ? "Все друзья" : filter == .online ? "Онлайн" : "Рядом")
+                Text(listTitle)
                     .font(.system(size: 16, weight: .semibold)).foregroundColor(.white)
                 Spacer()
                 Text("\(filtered.count)")
@@ -251,11 +252,19 @@ struct FriendsView: View {
         }
     }
 
+    private var listTitle: String {
+        switch filter {
+        case .all:    return NSLocalizedString("friends.all_friends",   comment: "")
+        case .online: return NSLocalizedString("friends.filter.online", comment: "")
+        case .nearby: return NSLocalizedString("friends.filter.nearby", comment: "")
+        }
+    }
+
     private var emptyFriends: some View {
         VStack(spacing: 12) {
             Image(systemName: "person.2.slash")
                 .font(.system(size: 36)).foregroundColor(AppTheme.lime.opacity(0.4))
-            Text("Нет друзей в этой категории")
+            Text(NSLocalizedString("friends.empty_category", comment: ""))
                 .font(.system(size: 14)).foregroundColor(AppTheme.muted)
         }
         .frame(maxWidth: .infinity).padding(30)
@@ -275,9 +284,9 @@ struct FriendsView: View {
                         .font(.system(size: 18)).foregroundColor(AppTheme.lime)
                 }
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("Пригласить друга")
+                    Text(NSLocalizedString("friends.invite_title", comment: ""))
                         .font(.system(size: 15, weight: .semibold)).foregroundColor(.white)
-                    Text("Тренируйтесь вместе")
+                    Text(NSLocalizedString("friends.invite_subtitle", comment: ""))
                         .font(.system(size: 12)).foregroundColor(AppTheme.muted)
                 }
                 Spacer()
@@ -305,7 +314,6 @@ struct FriendMapPin: View {
                 Text(friend.initials)
                     .font(.system(size: 11, weight: .bold)).foregroundColor(.white)
             }
-            // Pointer
             Triangle()
                 .fill(friend.color)
                 .frame(width: 8, height: 5)
@@ -336,7 +344,6 @@ struct FriendRow: View {
                 Circle().fill(friend.color).frame(width: 48, height: 48)
                 Text(friend.initials)
                     .font(.system(size: 15, weight: .bold)).foregroundColor(.white)
-                // Online dot
                 Circle()
                     .fill(friend.isOnline ? AppTheme.lime : AppTheme.muted)
                     .frame(width: 12, height: 12)
@@ -364,7 +371,7 @@ struct FriendRow: View {
                     Text(distanceText)
                         .font(.system(size: 12, weight: .medium)).foregroundColor(AppTheme.lime)
                 }
-                Text("\(friend.workoutsThisWeek) тр/нед")
+                Text(String(format: NSLocalizedString("friends.workouts_week", comment: ""), friend.workoutsThisWeek))
                     .font(.system(size: 11)).foregroundColor(AppTheme.muted)
             }
 
@@ -387,7 +394,6 @@ struct FriendDetailSheet: View {
         ZStack {
             AppTheme.dark.ignoresSafeArea()
             VStack(spacing: 0) {
-                // Handle
                 Capsule().fill(AppTheme.border).frame(width: 40, height: 4).padding(.top, 12)
 
                 ScrollView(showsIndicators: false) {
@@ -405,7 +411,9 @@ struct FriendDetailSheet: View {
                                 Circle()
                                     .fill(friend.isOnline ? AppTheme.lime : AppTheme.muted)
                                     .frame(width: 8, height: 8)
-                                Text(friend.isOnline ? "Онлайн" : "Не в сети")
+                                Text(friend.isOnline
+                                     ? NSLocalizedString("friend.online",  comment: "")
+                                     : NSLocalizedString("friend.offline", comment: ""))
                                     .font(.system(size: 13))
                                     .foregroundColor(friend.isOnline ? AppTheme.lime : AppTheme.muted)
                             }
@@ -414,14 +422,18 @@ struct FriendDetailSheet: View {
 
                         // Stats
                         HStack(spacing: 12) {
-                            miniStat("Тренировок", value: "\(friend.workoutsThisWeek)", icon: "dumbbell.fill", color: AppTheme.lime)
-                            miniStat("Расстояние", value: distanceString, icon: "location.fill", color: .orange)
+                            miniStat(NSLocalizedString("friend.stat_workouts", comment: ""),
+                                     value: "\(friend.workoutsThisWeek)",
+                                     icon: "dumbbell.fill", color: AppTheme.lime)
+                            miniStat(NSLocalizedString("friend.stat_distance", comment: ""),
+                                     value: distanceString,
+                                     icon: "location.fill", color: .orange)
                         }
                         .padding(.horizontal, 20)
 
                         // Last workout
                         VStack(alignment: .leading, spacing: 6) {
-                            Text("Последняя тренировка")
+                            Text(NSLocalizedString("friend.last_workout", comment: ""))
                                 .font(.system(size: 12, weight: .medium)).foregroundColor(AppTheme.muted)
                                 .padding(.leading, 4)
                             HStack(spacing: 12) {
@@ -434,7 +446,7 @@ struct FriendDetailSheet: View {
                                 VStack(alignment: .leading, spacing: 2) {
                                     Text(friend.lastWorkout)
                                         .font(.system(size: 15, weight: .semibold)).foregroundColor(.white)
-                                    Text("Сегодня")
+                                    Text(NSLocalizedString("friend.today", comment: ""))
                                         .font(.system(size: 12)).foregroundColor(AppTheme.muted)
                                 }
                                 Spacer()
@@ -449,7 +461,7 @@ struct FriendDetailSheet: View {
                         Button {} label: {
                             HStack(spacing: 8) {
                                 Image(systemName: "bolt.fill").font(.system(size: 15))
-                                Text("Вызвать на соревнование")
+                                Text(NSLocalizedString("friend.challenge", comment: ""))
                                     .font(.system(size: 15, weight: .bold))
                             }
                             .foregroundColor(.black)
@@ -469,8 +481,8 @@ struct FriendDetailSheet: View {
 
     private var distanceString: String {
         friend.distanceMeters < 1000
-            ? "\(Int(friend.distanceMeters)) м"
-            : String(format: "%.1f км", friend.distanceMeters / 1000)
+            ? String(format: NSLocalizedString("friends.distance_m",  comment: ""), Int(friend.distanceMeters))
+            : String(format: NSLocalizedString("friends.distance_km", comment: ""), friend.distanceMeters / 1000)
     }
 
     private func miniStat(_ label: String, value: String, icon: String, color: Color) -> some View {
@@ -509,9 +521,9 @@ struct InviteFriendSheet: View {
                             Image(systemName: "person.badge.plus")
                                 .font(.system(size: 28)).foregroundColor(AppTheme.lime)
                         }
-                        Text("Пригласить друга")
+                        Text(NSLocalizedString("friends.invite_title", comment: ""))
                             .font(.system(size: 20, weight: .bold)).foregroundColor(.white)
-                        Text("Поделись кодом и тренируйтесь вместе")
+                        Text(NSLocalizedString("friends.invite_subtitle", comment: ""))
                             .font(.system(size: 14)).foregroundColor(AppTheme.muted)
                             .multilineTextAlignment(.center)
                     }
@@ -519,7 +531,7 @@ struct InviteFriendSheet: View {
 
                     // Invite code
                     VStack(spacing: 6) {
-                        Text("Твой код приглашения")
+                        Text(NSLocalizedString("friends.invite_code_label", comment: ""))
                             .font(.system(size: 12, weight: .medium)).foregroundColor(AppTheme.muted)
                         HStack(spacing: 12) {
                             Text(inviteCode)
@@ -546,7 +558,7 @@ struct InviteFriendSheet: View {
 
                     // Share button
                     Button {
-                        let text = "Тренируйся со мной в FitnessApp! Код: \(inviteCode)"
+                        let text = String(format: NSLocalizedString("friends.share_text", comment: ""), inviteCode)
                         let av = UIActivityViewController(activityItems: [text], applicationActivities: nil)
                         UIApplication.shared.connectedScenes
                             .compactMap { $0 as? UIWindowScene }
@@ -555,7 +567,8 @@ struct InviteFriendSheet: View {
                     } label: {
                         HStack(spacing: 8) {
                             Image(systemName: "square.and.arrow.up").font(.system(size: 15))
-                            Text("Поделиться").font(.system(size: 16, weight: .bold))
+                            Text(NSLocalizedString("friends.share", comment: ""))
+                                .font(.system(size: 16, weight: .bold))
                         }
                         .foregroundColor(.black)
                         .frame(maxWidth: .infinity).padding(.vertical, 16)

@@ -164,3 +164,237 @@
 "nutrition.product_name_placeholder" = "Məhsulun adı";
 "nutrition.calories_field"        = "Kalori";
 "nutrition.grams_field"           = "Hər (q)";
+
+"friends.filter.all" = "Hamısı";
+"friends.filter.online" = "Onlayn";
+"friends.filter.nearby" = "Yaxında";
+"friends.map" = "Xəritə";
+"friends.all_friends" = "Bütün dostlar";
+
+"friends.title"              = "Dostlar";
+"friends.location_denied"    = "Ayarlardan məkan girişinə icazə ver";
+"friends.empty_category"     = "Bu kateqoriyada dost yoxdur";
+"friends.invite_title"       = "Dost dəvət et";
+"friends.invite_subtitle"    = "Kodu paylaş və birlikdə məşq edin";
+"friends.invite_code_label"  = "Dəvət kodun";
+"friends.share"              = "Paylaş";
+"friends.share_text"         = "FitnessApp-da mənimlə məşq et! Kod: %@";
+"friends.workouts_week"      = "%d məşq/həftə";
+"friend.online"              = "Onlayn";
+"friend.offline"             = "Oflayn";
+"friend.stat_workouts"       = "Məşqlər";
+"friend.stat_distance"       = "Məsafə";
+"friend.last_workout"        = "Son məşq";
+"friend.today"               = "Bu gün";
+"friend.challenge"           = "Yarışmağa dəvət et";
+
+/* Nutrition screen */
+"nutrition.title"                    = "Qida";
+"nutrition.calories_of"             = "%d kkal-dan";
+"nutrition.consumed"                = "Yeyildi";
+"nutrition.remaining"               = "Qaldı";
+"nutrition.goal"                    = "Hədəf";
+"nutrition.protein"                 = "Zülal";
+"nutrition.fat"                     = "Yağ";
+"nutrition.carbs"                   = "Karbohidrat";
+"nutrition.gram_unit"               = "q";
+"nutrition.macro_of"                = "%d q-dan";
+"nutrition.macro.p"                 = "Z";
+"nutrition.macro.f"                 = "Y";
+"nutrition.macro.c"                 = "K";
+"nutrition.meals_section"           = "Yemək vaxtları";
+"nutrition.add_food"                = "Məhsul əlavə et";
+"nutrition.search_placeholder"      = "Məhsul axtar...";
+"nutrition.new_product"             = "Yeni məhsul";
+"nutrition.product_name"            = "Ad";
+"nutrition.product_name_placeholder"= "Adı daxil edin";
+"nutrition.calories_field"          = "Kalori";
+"nutrition.grams_field"             = "Qram";
+"nutrition.water"                   = "Su";
+"nutrition.glasses"                 = "stəkan";
+
+/* Meal names */
+"nutrition.meal.breakfast"          = "Səhər yeməyi";
+"nutrition.meal.lunch"              = "Nahar";
+"nutrition.meal.dinner"             = "Şam yeməyi";
+
+/* Food database */
+"food.oatmeal"                      = "Yulaf";
+"food.banana"                       = "Banan";
+"food.chicken_breast"               = "Toyuq döşü";
+"food.brown_rice"                   = "Qəhvəyi düyü";
+"food.cucumber"                     = "Xiyar";
+"food.salmon"                       = "Qızılbalıq";
+"food.broccoli"                     = "Brokkoli";
+"food.egg"                          = "Yumurta";
+"food.cottage_cheese"               = "Kəsmik 5%";
+"food.greek_yogurt"                 = "Yunan yoqurtu";
+"food.buckwheat"                    = "Qarabaşaq";
+"food.beef"                         = "Mal əti";
+"food.apple"                        = "Alma";
+"food.almonds"                      = "Badam";
+"food.avocado"                      = "Avokado";
+
+/* Shared */
+"add.cancel"                        = "Ləğv et";
+"add.save"                          = "Saxla";
+"workouts.kcal"                     = "kkal";
+
+/* Friends screen */
+"friends.title"                = "Dostlar";
+"friends.filter.all"           = "Hamısı";
+"friends.filter.online"        = "Onlayn";
+"friends.filter.nearby"        = "Yaxında";
+"friends.map"                  = "Xəritə";
+"friends.all_friends"          = "Bütün dostlar";
+"friends.empty_category"       = "Burada hələ heç kim yoxdur";
+"friends.location_denied"      = "Yerə giriş qadağandır. Parametrlərdə aktivləşdirin.";
+"friends.workouts_week"        = "%d məşq/həftə";
+"friends.invite_title"         = "Dost dəvət et";
+"friends.invite_subtitle"      = "Birlikdə məşq edin və bir-birinizi motivasiya edin";
+"friends.invite_code_label"    = "Dəvət kodunuz";
+"friends.share_text"           = "FitnessApp-ə qoşul! Mənim kodum: %@";
+"friends.share"                = "Paylaş";
+
+/* Distance formatting */
+"friends.distance_m"           = "%d m";
+"friends.distance_km"          = "%.1f km";
+
+/* Friend detail sheet */
+"friend.online"                = "Onlayn";
+"friend.offline"               = "Oflayn";
+"friend.stat_workouts"         = "Məşqlər";
+"friend.stat_distance"         = "Məsafə";
+"friend.last_workout"          = "Son məşq";
+"friend.today"                 = "Bu gün";
+"friend.challenge"             = "Çağırış göndər";
+
+/* Workout types */
+"workout.type.hiit"            = "HIIT";
+"workout.type.strength"        = "Güc məşqi";
+"workout.type.yoga"            = "Yoga";
+
+/* Nutrition screen */
+"nutrition.title"                    = "Qida";
+"nutrition.calories_of"             = "%d kkal-dan";
+"nutrition.consumed"                = "Yeyildi";
+"nutrition.remaining"               = "Qaldı";
+"nutrition.goal"                    = "Hədəf";
+"nutrition.protein"                 = "Zülal";
+"nutrition.fat"                     = "Yağ";
+"nutrition.carbs"                   = "Karbohidrat";
+"nutrition.gram_unit"               = "q";
+"nutrition.macro_of"                = "%d q-dan";
+"nutrition.macro.p"                 = "Z";
+"nutrition.macro.f"                 = "Y";
+"nutrition.macro.c"                 = "K";
+"nutrition.meals_section"           = "Yemək vaxtları";
+"nutrition.add_food"                = "Məhsul əlavə et";
+"nutrition.search_placeholder"      = "Məhsul axtar...";
+"nutrition.new_product"             = "Yeni məhsul";
+"nutrition.product_name"            = "Ad";
+"nutrition.product_name_placeholder"= "Adı daxil edin";
+"nutrition.calories_field"          = "Kalori";
+"nutrition.grams_field"             = "Qram";
+"nutrition.water"                   = "Su";
+"nutrition.glasses"                 = "stəkan";
+
+/* Meal names */
+"nutrition.meal.breakfast"          = "Səhər yeməyi";
+"nutrition.meal.lunch"              = "Nahar";
+"nutrition.meal.dinner"             = "Şam yeməyi";
+
+/* Food database */
+"food.oatmeal"                      = "Yulaf";
+"food.banana"                       = "Banan";
+"food.chicken_breast"               = "Toyuq döşü";
+"food.brown_rice"                   = "Qəhvəyi düyü";
+"food.cucumber"                     = "Xiyar";
+"food.salmon"                       = "Qızılbalıq";
+"food.broccoli"                     = "Brokkoli";
+"food.egg"                          = "Yumurta";
+"food.cottage_cheese"               = "Kəsmik 5%";
+"food.greek_yogurt"                 = "Yunan yoqurtu";
+"food.buckwheat"                    = "Qarabaşaq";
+"food.beef"                         = "Mal əti";
+"food.apple"                        = "Alma";
+"food.almonds"                      = "Badam";
+"food.avocado"                      = "Avokado";
+
+/* Shared */
+"add.cancel"                        = "Ləğv et";
+"add.save"                          = "Saxla";
+"workouts.kcal"                     = "kkal";
+
+/* Friends screen */
+"friends.title"                = "Dostlar";
+"friends.filter.all"           = "Hamısı";
+"friends.filter.online"        = "Onlayn";
+"friends.filter.nearby"        = "Yaxında";
+"friends.map"                  = "Xəritə";
+"friends.all_friends"          = "Bütün dostlar";
+"friends.empty_category"       = "Burada hələ heç kim yoxdur";
+"friends.location_denied"      = "Yerə giriş qadağandır. Parametrlərdə aktivləşdirin.";
+"friends.workouts_week"        = "%d məşq/həftə";
+"friends.invite_title"         = "Dost dəvət et";
+"friends.invite_subtitle"      = "Birlikdə məşq edin və bir-birinizi motivasiya edin";
+"friends.invite_code_label"    = "Dəvət kodunuz";
+"friends.share_text"           = "FitnessApp-ə qoşul! Mənim kodum: %@";
+"friends.share"                = "Paylaş";
+
+/* Distance formatting */
+"friends.distance_m"           = "%d m";
+"friends.distance_km"          = "%.1f km";
+
+/* Friend detail sheet */
+"friend.online"                = "Onlayn";
+"friend.offline"               = "Oflayn";
+"friend.stat_workouts"         = "Məşqlər";
+"friend.stat_distance"         = "Məsafə";
+"friend.last_workout"          = "Son məşq";
+"friend.today"                 = "Bu gün";
+"friend.challenge"             = "Çağırış göndər";
+
+/* Workout types */
+"workout.type.hiit"            = "HIIT";
+"workout.type.strength"        = "Güc məşqi";
+"workout.type.yoga"            = "Yoga";
+
+/* WorkoutDetailView */
+"detail.title"           = "Ətraflı";
+"detail.min"             = "dəq";
+"detail.kcal"            = "kkal";
+"detail.video"           = "Video";
+"detail.exercises"       = "Məşqlər";
+"detail.sets"            = "yanaşma";
+"detail.reps"            = "təkrar";
+"detail.lets_workout"    = "Məşqə başla";
+"detail.watch_video"     = "Videoya bax";
+
+/* ActiveWorkoutView */
+"active.elapsed"             = "Vaxt";
+"active.sets_done"           = "Yanaşmalar";
+"active.sets_left"           = "Qaldı";
+"active.current_exercise"    = "Cari məşq";
+"active.up_next"             = "Növbəti";
+"active.complete_set"        = "Yanaşma tamamlandı";
+"active.complete_last_set"   = "Son yanaşma!";
+"active.skip"                = "Keç";
+"active.finish"              = "Bitir";
+"active.exercise_of"         = "%d / %d";
+"active.rest"                = "İstirahət";
+"active.rest_subtitle"       = "Növbəti yanaşmadan əvvəl dincəlin";
+"active.skip_rest"           = "İstirahəti keç";
+"active.finish_alert_title"   = "Məşqi bitirmək istəyirsiniz?";
+"active.finish_alert_message" = "İrəliləyişiniz saxlanılacaq";
+"active.finish_confirm"       = "Bitir";
+"active.finish_cancel"        = "Davam et";
+"active.completed_title"      = "Əla iş!";
+"active.done"                 = "Hazır";
+
+/* Workout types */
+"workout.type.cardio"    = "Kardio";
+"workout.type.strength"  = "Güc məşqi";
+"workout.type.yoga"      = "Yoga";
+"workout.type.hiit"      = "HIIT";
+"workout.type.running"   = "Qaçış";

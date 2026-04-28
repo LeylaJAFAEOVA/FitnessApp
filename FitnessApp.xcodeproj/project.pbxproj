@@ -15,6 +15,7 @@
 		C45DCEE42F84DB96000CA318 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = C45DCEE32F84DB96000CA318 /* GoogleSignIn */; };
 		C45DCEE62F84DB9B000CA318 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C45DCEE52F84DB9B000CA318 /* GoogleSignInSwift */; };
 		C45DCEE72F84DBDE000CA318 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E874CB2F824EDC0085A93A /* AppTheme.swift */; };
+		C484052E2FA14DEC00B55EB9 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E874BF2F7E92D90085A93A /* Strings.swift */; };
 		C4FB1BA92F961E7400649AA6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4FB1BA82F961E7400649AA6 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -29,16 +30,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		C45DCEDB2F84D715000CA318 /* Exceptions for "FitnessApp" folder in "FitnessApp" target */ = {
+		C48405192FA14D7600B55EB9 /* Exceptions for "FitnessApp" folder in "FitnessApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
-			);
-			target = C45DCEA52F84D60F000CA318 /* FitnessApp */;
-		};
-		C45DCEE92F84DBE4000CA318 /* Exceptions for "FitnessApp" folder in "FitnessApp" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
+				Assets.xcassets,
+				ContentView.swift,
 				FitnessApp.swift,
 				Models/User.swift,
 				Models/Workout.swift,
@@ -46,6 +42,7 @@
 				ViewModels/AuthViewModel.swift,
 				Views/Auth/LoginView.swift,
 				Views/Auth/RegisterView.swift,
+				Views/Main/ActiveWorkoutView.swift,
 				Views/Main/AddWorkoutView.swift,
 				Views/Main/FriendsView.swift,
 				Views/Main/HomeView.swift,
@@ -64,18 +61,10 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		C45DCEA72F84D60F000CA318 /* FitnessApp */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				C45DCEDB2F84D715000CA318 /* Exceptions for "FitnessApp" folder in "FitnessApp" target */,
-			);
-			path = FitnessApp;
-			sourceTree = "<group>";
-		};
 		C4E874582F7D2EF10085A93A /* FitnessApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				C45DCEE92F84DBE4000CA318 /* Exceptions for "FitnessApp" folder in "FitnessApp" target */,
+				C48405192FA14D7600B55EB9 /* Exceptions for "FitnessApp" folder in "FitnessApp" target */,
 			);
 			path = FitnessApp;
 			sourceTree = "<group>";
@@ -114,7 +103,6 @@
 				C4E874BF2F7E92D90085A93A /* Strings.swift */,
 				C4E874C32F7E94180085A93A /* Localizable.strings */,
 				C4E874582F7D2EF10085A93A /* FitnessApp */,
-				C45DCEA72F84D60F000CA318 /* FitnessApp */,
 				C4E874572F7D2EF10085A93A /* Products */,
 				C45DCEDC2F84DB67000CA318 /* Frameworks */,
 			);
@@ -142,9 +130,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				C45DCEA72F84D60F000CA318 /* FitnessApp */,
 			);
 			name = FitnessApp;
 			packageProductDependencies = (
@@ -219,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C45DCEE72F84DBDE000CA318 /* AppTheme.swift in Sources */,
+				C484052E2FA14DEC00B55EB9 /* Strings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
