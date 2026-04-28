@@ -18,7 +18,7 @@ class WorkoutViewModel: ObservableObject {
 
     private let db = Firestore.firestore()
 
-    // MARK: — Fetch
+   
     func fetchWorkouts(userId: String) async {
         DispatchQueue.main.async { self.isLoading = true }
         do {
@@ -74,7 +74,7 @@ class WorkoutViewModel: ObservableObject {
         }
     }
 
-    // MARK: — Add
+    
     func addWorkout(_ workout: Workout, userId: String) async {
         var data: [String: Any] = [
             "title": workout.title,
@@ -107,7 +107,6 @@ class WorkoutViewModel: ObservableObject {
         }
     }
 
-    // MARK: — Delete
     func deleteWorkout(_ workout: Workout, userId: String) async {
         guard let id = workout.id else { return }
         try? await db.collection("workouts").document(id).delete()
@@ -116,7 +115,6 @@ class WorkoutViewModel: ObservableObject {
         }
     }
 
-    // MARK: — Статистика
     var totalWorkouts: Int { workouts.count }
     var totalCalories: Int { workouts.reduce(0) { $0 + $1.calories } }
     var totalMinutes: Int  { workouts.reduce(0) { $0 + $1.duration } }

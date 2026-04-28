@@ -8,19 +8,22 @@
 import SwiftUI
 import WebKit
 
+// MARK: — YouTube Player
+
 struct YouTubePlayerView: UIViewRepresentable {
     let urlString: String
     func makeUIView(context: Context) -> WKWebView {
         let cfg = WKWebViewConfiguration()
         cfg.allowsInlineMediaPlayback = true
+        cfg.mediaTypesRequiringUserActionForPlayback = []
         let wv = WKWebView(frame: .zero, configuration: cfg)
         wv.scrollView.isScrollEnabled = false
         wv.backgroundColor = .black
+        wv.isOpaque = false
         return wv
     }
     func updateUIView(_ webView: WKWebView, context: Context) {
         var videoID = ""
-        
         if urlString.contains("watch?v=") {
             videoID = urlString.components(separatedBy: "watch?v=").last?
                 .components(separatedBy: "&").first ?? ""
@@ -30,14 +33,45 @@ struct YouTubePlayerView: UIViewRepresentable {
         } else if urlString.contains("embed/") {
             videoID = urlString.components(separatedBy: "embed/").last ?? ""
         }
-        
         guard !videoID.isEmpty,
-              let url = URL(string: "https://www.youtube.com/embed/\(videoID)?playsinline=1")
+              let url = URL(string: "https://www.youtube.com/embed/\(videoID)?playsinline=1&autoplay=1&rel=0")
         else { return }
-        
         webView.load(URLRequest(url: url))
     }
 }
+
+// MARK: — Fullscreen Video Sheet
+
+struct FullscreenVideoSheet: View {
+    let urlString: String
+    @Environment(\.dismiss) var dismiss
+
+    var body: some View {
+        ZStack {
+            Color.black.ignoresSafeArea()
+            VStack(spacing: 0) {
+                HStack {
+                    Spacer()
+                    Button { dismiss() } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.system(size: 28))
+                            .foregroundColor(.white.opacity(0.8))
+                    }
+                    .padding(16)
+                }
+                Spacer()
+                YouTubePlayerView(urlString: urlString)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 260)
+                Spacer()
+            }
+        }
+        .presentationDetents([.large])
+        .presentationDragIndicator(.visible)
+    }
+}
+
+// MARK: — WorkoutDetailView
 
 struct WorkoutDetailView: View {
     let workout: Workout
@@ -45,7 +79,8 @@ struct WorkoutDetailView: View {
     @EnvironmentObject var workoutVM: WorkoutViewModel
     @Environment(\.dismiss) var dismiss
 
-    @State private var videoExpanded = false
+    @State private var showVideoSheet   = false
+    @State private var showActiveWorkout = false
 
     var body: some View {
         ZStack {
@@ -67,6 +102,18 @@ struct WorkoutDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbarColorScheme(.dark, for: .navigationBar)
         .toolbarBackground(AppTheme.dark, for: .navigationBar)
+        // Fullscreen video
+        .sheet(isPresented: $showVideoSheet) {
+            if let url = workout.videoURLs.first {
+                FullscreenVideoSheet(urlString: url)
+            }
+        }
+        // Active workout screen
+        .fullScreenCover(isPresented: $showActiveWorkout) {
+            ActiveWorkoutView(workout: workout)
+                .environmentObject(authVM)
+                .environmentObject(workoutVM)
+        }
     }
 
     // MARK: — Hero
@@ -98,15 +145,15 @@ struct WorkoutDetailView: View {
                 Spacer()
             }.padding(16)
 
-            // Play / Pause button
+            // Play button → opens fullscreen video
             if !workout.videoURLs.isEmpty {
-                Button { withAnimation(.easeInOut) { videoExpanded.toggle() } } label: {
+                Button { showVideoSheet = true } label: {
                     ZStack {
                         Circle().stroke(AppTheme.lime.opacity(0.25), lineWidth: 2).frame(width: 72, height: 72)
                         Circle().fill(AppTheme.lime).frame(width: 52, height: 52)
-                        Image(systemName: videoExpanded ? "pause.fill" : "play.fill")
+                        Image(systemName: "play.fill")
                             .font(.system(size: 18)).foregroundColor(.black)
-                            .offset(x: videoExpanded ? 0 : 2)
+                            .offset(x: 2)
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity).padding(.bottom, 50)
@@ -151,7 +198,7 @@ struct WorkoutDetailView: View {
             statCell(icon: "flame.fill", label: "\(workout.calories)",
                      unit: NSLocalizedString("detail.kcal", comment: ""), color: .orange)
             Rectangle().fill(AppTheme.border).frame(width: 1, height: 38)
-            statCell(icon: "calendar",   label: formattedDate(workout.date), unit: "",  color: AppTheme.lime)
+            statCell(icon: "calendar",   label: formattedDate(workout.date), unit: "", color: AppTheme.lime)
         }
         .padding(.vertical, 14)
         .background(AppTheme.card)
@@ -174,25 +221,26 @@ struct WorkoutDetailView: View {
         VStack(alignment: .leading, spacing: 10) {
             sectionHeader(NSLocalizedString("detail.video", comment: ""), icon: "play.rectangle.fill")
                 .padding(.top, 22)
-            if videoExpanded {
-                YouTubePlayerView(urlString: url)
-                    .frame(height: 220).cornerRadius(16).padding(.horizontal, 20)
-            } else {
-                Button { withAnimation { videoExpanded = true } } label: {
-                    ZStack {
-                        thumbnailOrGradient.frame(maxWidth: .infinity).frame(height: 200).clipped()
-                        Color.black.opacity(0.3)
+
+            Button { showVideoSheet = true } label: {
+                ZStack {
+                    thumbnailOrGradient.frame(maxWidth: .infinity).frame(height: 200).clipped()
+                    Color.black.opacity(0.35)
+                    VStack(spacing: 8) {
                         ZStack {
                             Circle().stroke(AppTheme.lime.opacity(0.3), lineWidth: 2).frame(width: 60, height: 60)
                             Circle().fill(AppTheme.lime).frame(width: 44, height: 44)
                             Image(systemName: "play.fill").font(.system(size: 16))
                                 .foregroundColor(.black).offset(x: 2)
                         }
+                        Text(NSLocalizedString("detail.watch_video", comment: ""))
+                            .font(.system(size: 12, weight: .medium))
+                            .foregroundColor(.white.opacity(0.8))
                     }
-                    .cornerRadius(16).clipped()
                 }
-                .buttonStyle(.plain).padding(.horizontal, 20)
+                .cornerRadius(16).clipped()
             }
+            .buttonStyle(.plain).padding(.horizontal, 20)
         }
     }
 
@@ -235,17 +283,23 @@ struct WorkoutDetailView: View {
         }
     }
 
-    // MARK: — Start button
+    // MARK: — Start Button
 
     private var startButton: some View {
-        Button {} label: {
-            Text(LocalizedStringKey("detail.lets_workout"))
-                .font(.system(size: 16, weight: .bold)).foregroundColor(.black)
-                .frame(maxWidth: .infinity).padding(.vertical, 16)
-                .background(AppTheme.lime).cornerRadius(100)
+        Button { showActiveWorkout = true } label: {
+            HStack(spacing: 8) {
+                Image(systemName: "bolt.fill").font(.system(size: 14))
+                Text(LocalizedStringKey("detail.lets_workout"))
+                    .font(.system(size: 16, weight: .bold))
+            }
+            .foregroundColor(.black)
+            .frame(maxWidth: .infinity).padding(.vertical, 16)
+            .background(AppTheme.lime).cornerRadius(100)
         }
         .padding(.horizontal, 20).padding(.top, 24)
     }
+
+    // MARK: — Helpers
 
     private func sectionHeader(_ title: String, icon: String) -> some View {
         HStack(spacing: 8) {

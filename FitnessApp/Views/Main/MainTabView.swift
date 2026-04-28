@@ -2,10 +2,7 @@
 //  MainTabView.swift
 //  FitnessApp
 //
-//  Created by Leyla Jafarova on 01/04/2026.
-//
-
-
+//  Updated by Leyla Jafarova on 26/04/2026.
 
 import SwiftUI
 import FirebaseAuth
@@ -18,34 +15,53 @@ struct MainTabView: View {
         TabView {
             HomeView()
                 .tabItem {
-                    Label(NSLocalizedString("tab.home", comment: ""), systemImage: "house.fill")
+                    Label(
+                        NSLocalizedString("tab.workouts", comment: ""),
+                        systemImage: "dumbbell.fill"
+                    )
                 }
+                .environmentObject(workoutVM)
 
-            ExploreView()
+        
+            NutritionView()
                 .tabItem {
-                    Label(NSLocalizedString("tab.explore", comment: ""), systemImage: "safari.fill")
-                }
-
-            WorkoutsView()
-                .tabItem {
-                    Label(NSLocalizedString("tab.workouts", comment: ""), systemImage: "dumbbell.fill")
+                    Label(
+                        NSLocalizedString("tab.nutrition", comment: ""),
+                        systemImage: "fork.knife"
+                    )
                 }
 
             StatsView()
                 .tabItem {
-                    Label(NSLocalizedString("tab.stats", comment: ""), systemImage: "chart.bar.fill")
+                    Label(
+                        NSLocalizedString("tab.stats", comment: ""),
+                        systemImage: "chart.bar.fill"
+                    )
                 }
+                .environmentObject(workoutVM)
+
+            
+            FriendsView()
+                .tabItem {
+                    Label(
+                        NSLocalizedString("tab.friends", comment: ""),
+                        systemImage: "person.2.fill"
+                    )
+                }
+
 
             ProfileView()
                 .tabItem {
-                    Label(NSLocalizedString("tab.profile", comment: ""), systemImage: "person.fill")
+                    Label(
+                        NSLocalizedString("tab.profile", comment: ""),
+                        systemImage: "person.fill"
+                    )
                 }
+                .environmentObject(workoutVM)
         }
-        .id(Locale.current.language.languageCode?.identifier) // ← это заставит TabBar перерисоваться
-        // Lime green accent
+        .id(Locale.current.language.languageCode?.identifier)
         .tint(AppTheme.lime)
         .onAppear { styleTabBar() }
-
         .environmentObject(workoutVM)
         .task {
             let uid = authVM.currentUser?.id ?? authVM.userSession?.uid ?? ""
@@ -54,27 +70,25 @@ struct MainTabView: View {
         }
     }
 
-    // MARK: — Dark tab bar styling
-
     private func styleTabBar() {
-        let a = UITabBarAppearance()
-        a.configureWithOpaqueBackground()
-        a.backgroundColor    = UIColor(AppTheme.card)
-        a.shadowColor        = UIColor(AppTheme.border)
+        let appearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(AppTheme.card)
+        appearance.shadowColor     = UIColor(AppTheme.border)
 
         let lime = UIColor(AppTheme.lime)
         let gray = UIColor(AppTheme.muted)
 
-        [a.stackedLayoutAppearance,
-         a.inlineLayoutAppearance,
-         a.compactInlineLayoutAppearance].forEach { layout in
-            layout.selected.iconColor = lime
+        [appearance.stackedLayoutAppearance,
+         appearance.inlineLayoutAppearance,
+         appearance.compactInlineLayoutAppearance].forEach { layout in
+            layout.selected.iconColor  = lime
             layout.selected.titleTextAttributes = [.foregroundColor: lime]
-            layout.normal.iconColor = gray
-            layout.normal.titleTextAttributes  = [.foregroundColor: gray]
+            layout.normal.iconColor    = gray
+            layout.normal.titleTextAttributes   = [.foregroundColor: gray]
         }
 
-        UITabBar.appearance().standardAppearance   = a
-        UITabBar.appearance().scrollEdgeAppearance = a
+        UITabBar.appearance().standardAppearance   = appearance
+        UITabBar.appearance().scrollEdgeAppearance = appearance
     }
 }

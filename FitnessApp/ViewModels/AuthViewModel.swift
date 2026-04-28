@@ -19,12 +19,14 @@ class AuthViewModel: ObservableObject {
     @Published var currentUser: User?
     @Published var isLoading = false
     @Published var errorMessage = ""
+    @Published var isCheckingAuth = true
 
     init() {
-        self.userSession = Auth.auth().currentUser
+        self.userSession = nil
         _ = Auth.auth().addStateDidChangeListener { [weak self] _, user in
             DispatchQueue.main.async {
                 self?.userSession = user
+                self?.isCheckingAuth = false
             }
             if user != nil {
                 Task { await self?.fetchUser() }
@@ -68,6 +70,19 @@ class AuthViewModel: ObservableObject {
         DispatchQueue.main.async { self.isLoading = false }
     }
 
+    func resetPassword(email: String) async {
+        do {
+            try await Auth.auth().sendPasswordReset(withEmail: email)
+            DispatchQueue.main.async {
+                self.errorMessage = "Reset link sent to your email ✅"
+            }
+        } catch {
+            DispatchQueue.main.async {
+                self.errorMessage = self.localizeError(error)
+            }
+        }
+    }
+    
     func signOut() {
         try? Auth.auth().signOut()
         DispatchQueue.main.async {

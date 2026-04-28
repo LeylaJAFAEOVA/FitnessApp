@@ -25,6 +25,17 @@ struct AddWorkoutView: View {
         ExerciseTemplate.all.filter { $0.type == type }
     }
 
+    // MARK: — Duration formatter
+
+    private func formatDuration(_ minutes: Int) -> String {
+        guard minutes >= 60 else {
+            return "\(minutes) \(NSLocalizedString("workouts.min", comment: ""))"
+        }
+        let h = minutes / 60
+        let m = minutes % 60
+        return m == 0 ? "\(h)ч" : "\(h)ч \(m)мин"
+    }
+
     var body: some View {
         NavigationStack {
             ZStack {
@@ -42,13 +53,13 @@ struct AddWorkoutView: View {
                             typePicker
                         }
 
-                        // Parameters
                         formSection(NSLocalizedString("add.section.params", comment: "")) {
                             customStepper(
                                 label: NSLocalizedString("add.duration", comment: ""),
                                 value: $duration,
                                 range: 5...300, step: 5,
-                                unit: NSLocalizedString("workouts.min", comment: "")
+                                unit: NSLocalizedString("workouts.min", comment: ""),
+                                formatter: formatDuration
                             )
                             Divider().background(AppTheme.border)
                             customStepper(
@@ -59,7 +70,6 @@ struct AddWorkoutView: View {
                             )
                         }
 
-                        // Video
                         formSection(NSLocalizedString("add.section.video", comment: "")) {
                             ForEach(Array(videoURLs.enumerated()), id: \.offset) { idx, _ in
                                 if idx > 0 { Divider().background(AppTheme.border) }
@@ -86,14 +96,14 @@ struct AddWorkoutView: View {
                             Button { videoURLs.append("") } label: {
                                 HStack(spacing: 6) {
                                     Image(systemName: "plus.circle.fill")
-                                    Text("Добавить видео").font(.system(size: 14))
+                                    Text(NSLocalizedString("add.section.video", comment: ""))
+                                        .font(.system(size: 14))
                                 }
                                 .foregroundColor(AppTheme.lime)
                                 .padding(.horizontal, 16).padding(.vertical, 12)
                             }
                         }
 
-                        // Exercises
                         formSection(
                             "\(NSLocalizedString("add.section.exercises", comment: "")) (\(selected.count))"
                         ) {
@@ -113,7 +123,6 @@ struct AddWorkoutView: View {
                     .padding(.horizontal, 20).padding(.top, 10).padding(.bottom, 40)
                 }
 
-                // Saving overlay
                 if isSaving {
                     Color.black.opacity(0.55).ignoresSafeArea()
                     VStack(spacing: 12) {
@@ -146,7 +155,7 @@ struct AddWorkoutView: View {
         }
     }
 
-    // MARK: — Type picker
+    // MARK: — Type Picker
 
     private var typePicker: some View {
         HStack {
@@ -171,7 +180,7 @@ struct AddWorkoutView: View {
         .padding(.horizontal, 16).padding(.vertical, 14)
     }
 
-    // MARK: — Exercise toggle row
+    // MARK: — Exercise Row
 
     private func exerciseRow(_ tmpl: ExerciseTemplate) -> some View {
         let on = selected.contains(where: { $0.id == tmpl.id })
@@ -219,7 +228,7 @@ struct AddWorkoutView: View {
         }
     }
 
-    // MARK: — Builders
+    // MARK: — Form Section
 
     @ViewBuilder
     private func formSection<Content: View>(_ title: String, @ViewBuilder content: () -> Content) -> some View {
@@ -231,6 +240,8 @@ struct AddWorkoutView: View {
                 .overlay(RoundedRectangle(cornerRadius: 16).stroke(AppTheme.border, lineWidth: 1))
         }
     }
+
+    // MARK: — Text Field
 
     private func locTextField(
         placeholder: String,
@@ -248,9 +259,15 @@ struct AddWorkoutView: View {
             .padding(.horizontal, 16).padding(.vertical, 14)
     }
 
+    // MARK: — Stepper
+
     private func customStepper(
-        label: String, value: Binding<Int>,
-        range: ClosedRange<Int>, step: Int, unit: String
+        label: String,
+        value: Binding<Int>,
+        range: ClosedRange<Int>,
+        step: Int,
+        unit: String,
+        formatter: ((Int) -> String)? = nil
     ) -> some View {
         HStack {
             Text(label).font(.system(size: 15)).foregroundColor(.white)
@@ -261,9 +278,9 @@ struct AddWorkoutView: View {
                 } label: {
                     Image(systemName: "minus.circle.fill").font(.system(size: 24)).foregroundColor(AppTheme.lime)
                 }
-                Text("\(value.wrappedValue) \(unit)")
+                Text(formatter?(value.wrappedValue) ?? "\(value.wrappedValue) \(unit)")
                     .font(.system(size: 14, weight: .semibold)).foregroundColor(.white)
-                    .frame(minWidth: 70, alignment: .center)
+                    .frame(minWidth: 80, alignment: .center)
                 Button {
                     if value.wrappedValue + step <= range.upperBound { value.wrappedValue += step }
                 } label: {

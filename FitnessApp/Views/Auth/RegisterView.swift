@@ -28,7 +28,7 @@ struct RegisterView: View {
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 28) {
 
-                    // Header
+                    
                     HStack {
                         Button { dismiss() } label: {
                             Image(systemName: "xmark")
@@ -42,7 +42,7 @@ struct RegisterView: View {
                     }
                     .padding(.top, 16)
 
-                    // Logo
+                   
                     VStack(spacing: 10) {
                         ZStack {
                             Circle().fill(AppTheme.lime.opacity(0.15)).frame(width: 80, height: 80)
@@ -55,7 +55,6 @@ struct RegisterView: View {
                             .foregroundColor(.white)
                     }
 
-                    // Fields
                     VStack(spacing: 14) {
                         DarkTextField(icon: "person", placeholder: "Имя", text: $name)
                         DarkTextField(icon: "envelope", placeholder: "Email", text: $email)
@@ -75,7 +74,7 @@ struct RegisterView: View {
                         }
                     }
 
-                    // Button
+        
                     Button {
                         Task { await authVM.register(name: name, email: email, password: password) }
                     } label: {

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OnboardingPage {
-    let image: String       // SF Symbol или замени на реальное фото
+    let image: String       
     let title: String
     let highlight: String
     let subtitle: String

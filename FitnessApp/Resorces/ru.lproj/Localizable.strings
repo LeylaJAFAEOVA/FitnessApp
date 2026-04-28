@@ -1,0 +1,398 @@
+/* 
+  Localizable.strings
+  FitnessApp
+
+  Created by Leyla Jafarova on 02/04/2026.
+  
+*/
+
+"tab.home"                    = "Главная";
+"tab.explore"                 = "Обзор";
+"tab.workouts"                = "Тренировки";
+"tab.stats"                   = "Статистика";
+"tab.profile"                 = "Профиль";
+ 
+"home.greeting.morning"       = "Доброе утро ☀️";
+"home.greeting.afternoon"     = "Добрый день 💪";
+"home.greeting.evening"       = "Добрый вечер 🌙";
+"home.greeting.night"          = "Доброй ночи 😴";
+"home.popular"                = "Популярные тренировки";
+"home.today_plan"             = "План на сегодня";
+"home.see_all"                = "Все";
+"home.no_workouts"            = "Нет тренировок";
+"home.add_first"              = "Добавь первую тренировку через +";
+ 
+"explore.title"               = "Обзор";
+"explore.search"              = "Поиск тренировок…";
+"explore.best_for_you"        = "Для тебя";
+"explore.all"                 = "Все";
+"explore.no_results"          = "Ничего не найдено";
+ 
+"workouts.loading"            = "Загружаем тренировки…";
+"workouts.empty"              = "Нет тренировок";
+"workouts.emptySub"           = "Добавь первую тренировку\nнажав кнопку +";
+"workouts.add"                = "Добавить";
+"workouts.exercises"          = "упражнений";
+"workouts.min"                = "мин";
+"workouts.kcal"               = "ккал";
+"workouts.delete"             = "Удалить";
+ 
+"add.title"                   = "Новая тренировка";
+"add.cancel"                  = "Отмена";
+"add.save"                    = "Сохранить";
+"add.saving"                  = "Сохраняем…";
+"add.section.basic"           = "Основное";
+"add.section.params"          = "Параметры";
+"add.section.video"           = "Видео (YouTube)";
+"add.section.exercises"       = "Упражнения";
+"add.name.placeholder"        = "Название тренировки";
+"add.type"                    = "Тип";
+"add.duration"                = "Длительность";
+"add.calories"                = "Калории";
+"add.video.placeholder"       = "https://youtube.com/…";
+"add.no_templates"            = "Нет шаблонов для этого типа";
+"add.sets"                    = "подхода";
+"add.reps"                    = "повт.";
+ 
+"detail.title"                = "Детали";
+"detail.video"                = "Видео";
+"detail.exercises"            = "Упражнения";
+"detail.sets"                 = "подходов";
+"detail.reps"                 = "повт.";
+"detail.lets_workout"         = "Начать тренировку";
+"detail.min"                  = "мин";
+"detail.kcal"                 = "ккал";
+ 
+"stats.title"                 = "Статистика";
+"stats.workouts"              = "Тренировок";
+"stats.calories"              = "Калорий";
+"stats.minutes"               = "Минут";
+"stats.this_week"             = "На этой неделе";
+"stats.last7days"             = "Тренировки за 7 дней";
+"stats.calories_by_type"      = "Калории по типу";
+"stats.no_data"               = "Нет данных";
+"stats.no_data_sub"           = "Добавь тренировки\nдля статистики";
+ 
+"profile.title"               = "Профиль";
+"profile.body_stats"          = "Параметры тела";
+"profile.weight"              = "Вес";
+"profile.height"              = "Рост";
+"profile.bmi"                 = "ИМТ";
+"profile.achievements"        = "Достижения";
+"profile.total_workouts"      = "Всего тренировок";
+"profile.calories_burned"     = "Сожжено калорий";
+"profile.this_week"           = "На этой неделе";
+"profile.edit"                = "Изменить";
+"profile.save"                = "Сохранить";
+"profile.sign_out"            = "Выйти";
+"profile.kg"                  = "кг";
+"profile.cm"                  = "см";
+"profile.language"            = "Язык";
+"profile.weight_placeholder"  = "70 кг";
+"profile.height_placeholder"  = "175 см";
+"profile.kcal"                = "ккал";
+"workouts.min"                = "мин";
+"workouts.kcal"               = "ккал";
+ 
+"exercise.bench_press"        = "Жим лёжа";
+"exercise.squats"             = "Приседания";
+"exercise.deadlift"           = "Становая тяга";
+"exercise.pull_ups"           = "Подтягивания";
+"exercise.push_ups"           = "Отжимания";
+"exercise.plank"              = "Планка";
+"exercise.dumbbell_press"     = "Жим гантелей сидя";
+"exercise.row"                = "Тяга к поясу";
+"exercise.jump_rope"          = "Прыжки на скакалке";
+"exercise.burpees"            = "Берпи";
+"exercise.running_in_place"   = "Бег на месте";
+"exercise.jumping_jacks"      = "Прыжки с ногами врозь";
+"exercise.mountain_climber"   = "Горная тропа";
+"exercise.box_jumps"          = "Прыжки на ящик";
+"exercise.jump_lunges"        = "Выпады с прыжком";
+"exercise.downward_dog"       = "Собака мордой вниз";
+"exercise.warrior_pose"       = "Поза воина";
+"exercise.child_pose"         = "Поза ребёнка";
+"exercise.easy_run"           = "Лёгкий бег";
+"exercise.interval_run"       = "Интервальный бег";
+"workout.type.cardio"         = "Кардио";
+"workout.type.strength"       = "Силовая";
+"workout.type.yoga"           = "Йога";
+"workout.type.hiit"           = "ВИИТ";
+"workout.type.running"        = "Бег";
+"login.title" = "Твой персональный тренер";
+"login.email" = "Email";
+"login.password" = "Пароль";
+"login.signin" = "Войти";
+"login.no_account" = "Нет аккаунта? ";
+"login.register" = "Зарегистрироваться";
+"login.google" = "Войти через Google";
+
+// Nutrition
+"nutrition.title"             = "Питание";
+"nutrition.consumed"          = "Съедено";
+"nutrition.remaining"         = "Осталось";
+"nutrition.goal"              = "Цель";
+"nutrition.calories_of"       = "из %d ккал";
+"nutrition.protein"           = "Белки";
+"nutrition.fat"               = "Жиры";
+"nutrition.carbs"             = "Углеводы";
+"nutrition.macro_of"          = "из %dг";
+"nutrition.meals_section"     = "Приёмы пищи";
+"nutrition.water"             = "Вода";
+"nutrition.glasses"           = "стаканов";
+"nutrition.add_food"          = "Добавить продукт";
+"nutrition.search_placeholder"= "Поиск продукта...";
+"nutrition.macro.p"           = "Б";
+"nutrition.macro.f"           = "Ж";
+"nutrition.macro.c"           = "У";
+"nutrition.meal.breakfast"    = "Завтрак";
+"nutrition.meal.lunch"        = "Обед";
+"nutrition.meal.dinner"       = "Ужин";
+
+"nutrition.gram_unit"     = "г";
+"nutrition.macro_of"      = "из %dг";
+"tab.friends"             = "Друзья";
+"tab.nutrition"           = "Питание";
+
+"tab.friends"   = "Друзья";
+"tab.nutrition" = "Питание";
+
+"nutrition.new_product"           = "Новый продукт";
+"nutrition.product_name"          = "Название";
+"nutrition.product_name_placeholder" = "Название продукта";
+"nutrition.calories_field"        = "Калории";
+"nutrition.grams_field"           = "На (г)";
+
+"friends.filter.all" = "Все";
+"friends.filter.online" = "Онлайн";
+"friends.filter.nearby" = "Рядом";
+
+"friends.title"              = "Друзья";
+"friends.map"                = "Карта";
+"friends.all_friends"        = "Все друзья";
+"friends.location_denied"    = "Разреши доступ к геолокации в Настройках";
+"friends.empty_category"     = "Нет друзей в этой категории";
+"friends.invite_title"       = "Пригласить друга";
+"friends.invite_subtitle"    = "Поделись кодом и тренируйтесь вместе";
+"friends.invite_code_label"  = "Твой код приглашения";
+"friends.share"              = "Поделиться";
+"friends.share_text"         = "Тренируйся со мной в FitnessApp! Код: %@";
+"friends.workouts_week"      = "%d тр/нед";
+"friend.online"              = "Онлайн";
+"friend.offline"             = "Не в сети";
+"friend.stat_workouts"       = "Тренировок";
+"friend.stat_distance"       = "Расстояние";
+"friend.last_workout"        = "Последняя тренировка";
+"friend.today"               = "Сегодня";
+"friend.challenge"           = "Вызвать на соревнование";
+
+/* Nutrition screen */
+"nutrition.title"                    = "Питание";
+"nutrition.calories_of"             = "из %d ккал";
+"nutrition.consumed"                = "Съедено";
+"nutrition.remaining"               = "Осталось";
+"nutrition.goal"                    = "Цель";
+"nutrition.protein"                 = "Белки";
+"nutrition.fat"                     = "Жиры";
+"nutrition.carbs"                   = "Углеводы";
+"nutrition.gram_unit"               = "г";
+"nutrition.macro_of"                = "из %d г";
+"nutrition.macro.p"                 = "Б";
+"nutrition.macro.f"                 = "Ж";
+"nutrition.macro.c"                 = "У";
+"nutrition.meals_section"           = "Приёмы пищи";
+"nutrition.add_food"                = "Добавить продукт";
+"nutrition.search_placeholder"      = "Поиск продуктов...";
+"nutrition.new_product"             = "Новый продукт";
+"nutrition.product_name"            = "Название";
+"nutrition.product_name_placeholder"= "Введите название";
+"nutrition.calories_field"          = "Калории";
+"nutrition.grams_field"             = "Граммы";
+"nutrition.water"                   = "Вода";
+"nutrition.glasses"                 = "стаканов";
+
+/* Meal names */
+"nutrition.meal.breakfast"          = "Завтрак";
+"nutrition.meal.lunch"              = "Обед";
+"nutrition.meal.dinner"             = "Ужин";
+
+/* Food database */
+"food.oatmeal"                      = "Овсянка";
+"food.banana"                       = "Банан";
+"food.chicken_breast"               = "Куриная грудка";
+"food.brown_rice"                   = "Рис бурый";
+"food.cucumber"                     = "Огурец";
+"food.salmon"                       = "Лосось";
+"food.broccoli"                     = "Брокколи";
+"food.egg"                          = "Яйцо";
+"food.cottage_cheese"               = "Творог 5%";
+"food.greek_yogurt"                 = "Греческий йогурт";
+"food.buckwheat"                    = "Гречка";
+"food.beef"                         = "Говядина";
+"food.apple"                        = "Яблоко";
+"food.almonds"                      = "Миндаль";
+"food.avocado"                      = "Авокадо";
+
+/* Shared */
+"add.cancel"                        = "Отмена";
+"add.save"                          = "Сохранить";
+"workouts.kcal"                     = "ккал";
+
+/* Friends screen */
+"friends.title"                = "Друзья";
+"friends.filter.all"           = "Все";
+"friends.filter.online"        = "Онлайн";
+"friends.filter.nearby"        = "Рядом";
+"friends.map"                  = "Карта";
+"friends.all_friends"          = "Все друзья";
+"friends.empty_category"       = "Здесь пока никого нет";
+"friends.location_denied"      = "Доступ к геолокации запрещён. Включите в настройках.";
+"friends.workouts_week"        = "%d тр/нед";
+"friends.invite_title"         = "Пригласить друга";
+"friends.invite_subtitle"      = "Тренируйтесь вместе и мотивируйте друг друга";
+"friends.invite_code_label"    = "Ваш код приглашения";
+"friends.share_text"           = "Присоединяйся ко мне в FitnessApp! Мой код: %@";
+"friends.share"                = "Поделиться";
+
+/* Distance formatting */
+"friends.distance_m"           = "%d м";
+"friends.distance_km"          = "%.1f км";
+
+/* Friend detail sheet */
+"friend.online"                = "Онлайн";
+"friend.offline"               = "Не в сети";
+"friend.stat_workouts"         = "Тренировки";
+"friend.stat_distance"         = "Расстояние";
+"friend.last_workout"          = "Последняя тренировка";
+"friend.today"                 = "Сегодня";
+"friend.challenge"             = "Бросить вызов";
+
+/* Workout types */
+"workout.type.hiit"            = "HIIT";
+"workout.type.strength"        = "Силовая";
+"workout.type.yoga"            = "Йога";
+
+/* Nutrition screen */
+"nutrition.title"                    = "Питание";
+"nutrition.calories_of"             = "из %d ккал";
+"nutrition.consumed"                = "Съедено";
+"nutrition.remaining"               = "Осталось";
+"nutrition.goal"                    = "Цель";
+"nutrition.protein"                 = "Белки";
+"nutrition.fat"                     = "Жиры";
+"nutrition.carbs"                   = "Углеводы";
+"nutrition.gram_unit"               = "г";
+"nutrition.macro_of"                = "из %d г";
+"nutrition.macro.p"                 = "Б";
+"nutrition.macro.f"                 = "Ж";
+"nutrition.macro.c"                 = "У";
+"nutrition.meals_section"           = "Приёмы пищи";
+"nutrition.add_food"                = "Добавить продукт";
+"nutrition.search_placeholder"      = "Поиск продуктов...";
+"nutrition.new_product"             = "Новый продукт";
+"nutrition.product_name"            = "Название";
+"nutrition.product_name_placeholder"= "Введите название";
+"nutrition.calories_field"          = "Калории";
+"nutrition.grams_field"             = "Граммы";
+"nutrition.water"                   = "Вода";
+"nutrition.glasses"                 = "стаканов";
+
+/* Meal names */
+"nutrition.meal.breakfast"          = "Завтрак";
+"nutrition.meal.lunch"              = "Обед";
+"nutrition.meal.dinner"             = "Ужин";
+
+/* Food database */
+"food.oatmeal"                      = "Овсянка";
+"food.banana"                       = "Банан";
+"food.chicken_breast"               = "Куриная грудка";
+"food.brown_rice"                   = "Рис бурый";
+"food.cucumber"                     = "Огурец";
+"food.salmon"                       = "Лосось";
+"food.broccoli"                     = "Брокколи";
+"food.egg"                          = "Яйцо";
+"food.cottage_cheese"               = "Творог 5%";
+"food.greek_yogurt"                 = "Греческий йогурт";
+"food.buckwheat"                    = "Гречка";
+"food.beef"                         = "Говядина";
+"food.apple"                        = "Яблоко";
+"food.almonds"                      = "Миндаль";
+"food.avocado"                      = "Авокадо";
+
+/* Shared */
+"add.cancel"                        = "Отмена";
+"add.save"                          = "Сохранить";
+"workouts.kcal"                     = "ккал";
+
+/* Friends screen */
+"friends.title"                = "Друзья";
+"friends.filter.all"           = "Все";
+"friends.filter.online"        = "Онлайн";
+"friends.filter.nearby"        = "Рядом";
+"friends.map"                  = "Карта";
+"friends.all_friends"          = "Все друзья";
+"friends.empty_category"       = "Здесь пока никого нет";
+"friends.location_denied"      = "Доступ к геолокации запрещён. Включите в настройках.";
+"friends.workouts_week"        = "%d тр/нед";
+"friends.invite_title"         = "Пригласить друга";
+"friends.invite_subtitle"      = "Тренируйтесь вместе и мотивируйте друг друга";
+"friends.invite_code_label"    = "Ваш код приглашения";
+"friends.share_text"           = "Присоединяйся ко мне в FitnessApp! Мой код: %@";
+"friends.share"                = "Поделиться";
+
+/* Distance formatting */
+"friends.distance_m"           = "%d м";
+"friends.distance_km"          = "%.1f км";
+
+/* Friend detail sheet */
+"friend.online"                = "Онлайн";
+"friend.offline"               = "Не в сети";
+"friend.stat_workouts"         = "Тренировки";
+"friend.stat_distance"         = "Расстояние";
+"friend.last_workout"          = "Последняя тренировка";
+"friend.today"                 = "Сегодня";
+"friend.challenge"             = "Бросить вызов";
+
+/* Workout types */
+"workout.type.hiit"            = "HIIT";
+"workout.type.strength"        = "Силовая";
+"workout.type.yoga"            = "Йога";
+
+/* WorkoutDetailView */
+"detail.title"           = "Детали";
+"detail.min"             = "мин";
+"detail.kcal"            = "ккал";
+"detail.video"           = "Видео";
+"detail.exercises"       = "Упражнения";
+"detail.sets"            = "подх";
+"detail.reps"            = "повт";
+"detail.lets_workout"    = "Начать тренировку";
+"detail.watch_video"     = "Смотреть видео";
+
+/* ActiveWorkoutView */
+"active.elapsed"             = "Время";
+"active.sets_done"           = "Подходов";
+"active.sets_left"           = "Осталось";
+"active.current_exercise"    = "Текущее упражнение";
+"active.up_next"             = "Далее";
+"active.complete_set"        = "Подход выполнен";
+"active.complete_last_set"   = "Последний подход!";
+"active.skip"                = "Пропустить";
+"active.finish"              = "Завершить";
+"active.exercise_of"         = "%d из %d";
+"active.rest"                = "Отдых";
+"active.rest_subtitle"       = "Восстановитесь перед следующим подходом";
+"active.skip_rest"           = "Пропустить отдых";
+"active.finish_alert_title"   = "Завершить тренировку?";
+"active.finish_alert_message" = "Прогресс будет сохранён";
+"active.finish_confirm"       = "Завершить";
+"active.finish_cancel"        = "Продолжить";
+"active.completed_title"      = "Отличная работа!";
+"active.done"                 = "Готово";
+
+/* Workout types (если ещё не добавлены) */
+"workout.type.cardio"    = "Кардио";
+"workout.type.strength"  = "Силовая";
+"workout.type.yoga"      = "Йога";
+"workout.type.hiit"      = "HIIT";
+"workout.type.running"   = "Бег";
