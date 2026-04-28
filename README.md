@@ -23,4 +23,4 @@ iOS fitness application built with SwiftUI.
 
 ## Author
 
-Leyla Jafaeova
+Leyla Jafarova
